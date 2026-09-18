@@ -104,7 +104,7 @@ router.post('/create', createcreator)
 
 /**
  * @swagger
- * /creator/login:
+ * /login:
  *   post:
  *     summary: Login creator
  *     description: Authenticates a creator using their email and password and returns a JWT login token.
@@ -194,7 +194,7 @@ router.post('/login', loginCreator)
 
 /**
  * @swagger
- * /creator/updateCreator:
+ * /updateCreator:
  *   patch:
  *     summary: Update creator account
  *     description: Updates the authenticated creator's account information.
@@ -271,7 +271,7 @@ router.patch('/updateCreator', checkLogin, updateAccount)
 
 /**
  * @swagger
- * /creator/onboarding:
+ * /onboarding:
  *   patch:
  *     summary: Complete creator onboarding
  *     description: Completes the onboarding process for an authenticated creator by saving their profile and account information.
@@ -382,7 +382,7 @@ router.patch('/onboarding', checkLogin, onboarding)
 
 /**
  * @swagger
- * /creator/deleteCreator/{Id}:
+ * /deleteCreator/{Id}:
  *   delete:
  *     summary: Delete a creator
  *     description: Deletes a creator account using the creator's ID.
@@ -436,7 +436,7 @@ router.post('/forgotPassword', forgotPassword)
 
 /**
  * @swagger
- * /creator/generateLink:
+ * /generateLink:
  *   post:
  *     summary: Generate creator donation links
  *     description: Generates donation links for the authenticated creator based on their configured social media platforms.
@@ -492,7 +492,7 @@ router.post('/generateLink', checkLogin, generateLink)
 
 /**
  * @swagger
- * /creator/verify:
+ * /verify:
  *   post:
  *     summary: Verify creator account
  *     description: Verifies a creator's account using the OTP sent to their email address. A login token is returned after successful verification.
@@ -595,7 +595,7 @@ router.post('/verify', verifyOtp)
 
 /**
  * @swagger
- * /creator/getAll:
+ * /getAll:
  *   get:
  *     summary: Get all creators
  *     description: Retrieves all creators from the database.
@@ -639,7 +639,7 @@ router.get('/getOne', getOne)
 
 /**
  * @swagger
- * /creator/viewCreator/{link}:
+ * /viewCreator/{link}:
  *   get:
  *     summary: View creator profile
  *     description: Retrieves a creator's public profile using their unique creator link. This route can be used when no social media platform is provided.
@@ -714,7 +714,7 @@ router.get('/getOne', getOne)
  *                   type: string
  *                   example: Internal server error
  *
- * /creator/viewCreator/{link}/{platform}:
+ * /viewCreator/{link}/{platform}:
  *   get:
  *     summary: View creator profile with platform
  *     description: Retrieves a creator's public profile using their unique creator link and an optional social media platform. The platform route is used when the frontend has a platform available.
@@ -802,7 +802,7 @@ router.get('/viewCreator/:link/:platform', viewCreator)
 
 /**
  * @swagger
- * /creator/dashboard:
+ * /dashboard:
  *   get:
  *     summary: Get creator dashboard
  *     description: Retrieves the authenticated creator's dashboard information, including account balance, transactions, and notifications.
