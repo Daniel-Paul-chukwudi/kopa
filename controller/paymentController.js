@@ -25,11 +25,6 @@ exports.initializePayment = async (req, res) => {
             })
       }
 
-    // const redirect_url = `https://mystorelink.vercel.app/payment/redirect?tier=${encodeURIComponent(
-    //   tier
-    // )}&fullName=${encodeURIComponent(user.fullName)}&reference=${encodeURIComponent(
-    //   ref
-    // )}&amount=${encodeURIComponent(price)}`;
 
     const paymentData = {
       amount: price,
