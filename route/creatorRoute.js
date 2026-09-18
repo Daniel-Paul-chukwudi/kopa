@@ -22,7 +22,7 @@ const router = require('express').Router()
 
 /**
  * @swagger
- * /creator/create:
+ * /create:
  *   post:
  *     summary: Create a new creator account
  *     description: Creates a new creator account and sends an OTP to the creator's email for verification.

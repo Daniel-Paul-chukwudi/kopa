@@ -4,7 +4,7 @@ const router = require('express').Router()
 
 /**
  * @swagger
- * /creator/pay:
+ * /pay:
  *   post:
  *     summary: Initialize a donation payment
  *     description: Initializes a donation payment for a creator using the creator's unique link and returns the payment checkout URL.
@@ -115,7 +115,7 @@ router.post('/payments/validate', webHook)
 
 /**
  * @swagger
- * /creator/payment/validate:
+ * /payment/validate:
  *   post:
  *     summary: Validate a payment
  *     description: Verifies a payment using its payment reference and updates the payment status and creator account when the payment is successful.
