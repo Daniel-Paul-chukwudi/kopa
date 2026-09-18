@@ -28,19 +28,6 @@ exports.createcreator = async (req,res)=>{
 
         const hashPassword = await helpers.hashPassword(password)
         
-        let url = ''
-        let publicId = ''
-
-        if(req.file){
-            const image = await uploadImageToCloudinary(req.file.path)
-            if(!image.success){
-                console.error(
-                `Error uplaoding image`
-                );
-            }
-            url = image?.imageSecureUrl ?? ''
-            publicId = image?.imagePublicId ?? ''
-        }
         const code = await helpers.randomCodegenerator()
         const otp = await helpers.otpGenerator()
 
@@ -49,8 +36,6 @@ exports.createcreator = async (req,res)=>{
                 password:hashPassword,
                 link:code,
                 otp:otp,
-                profileImageUrl: url,
-                profileImagePublicId: publicId,
             })
             
             await creator.save()
