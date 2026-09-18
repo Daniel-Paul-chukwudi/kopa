@@ -182,7 +182,7 @@ router.post('/payments/validate', webHook)
  *               properties:
  *                 message:
  *                   type: string
- *                   example: Error verifying payment: Verification failed
+ *                   example: "Error verifying payment: Verification failed"
  */
 router.post('/payment/validate', verifyPayment)
 

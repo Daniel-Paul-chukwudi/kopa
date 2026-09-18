@@ -197,12 +197,11 @@ router.post('/login', loginCreator)
  * /creator/updateCreator:
  *   patch:
  *     summary: Update creator account
- *     description: Updates the authenticated creator's account information. Only the fields provided in the request body will be updated.
+ *     description: Updates the authenticated creator's account information.
  *     tags:
  *       - Creator
  *     security:
  *       - bearerAuth: []
- *
  *     requestBody:
  *       required: true
  *       content:
@@ -230,24 +229,18 @@ router.post('/login', loginCreator)
  *                 example: "+2348012345678"
  *               socials:
  *                 type: array
- *                 description: Social media platforms associated with the creator.
  *                 items:
  *                   type: string
- *                 example:
- *                   - whatApp
- *                   - instagram
+ *                 example: ["whatApp", "instagram"]
  *               donationTypes:
  *                 type: object
- *                 description: Donation types and their corresponding amounts.
+ *                 description: Custom donation types and their corresponding amounts.
  *                 additionalProperties:
  *                   type: number
- *                 example:
- *                   basic: 400
- *                   special: 1000
- *
+ *                 example: {"basic": 400, "special": 1000}
  *     responses:
  *       200:
- *         description: Creator account updated successfully
+ *         description: Account updated successfully
  *         content:
  *           application/json:
  *             schema:
@@ -258,11 +251,8 @@ router.post('/login', loginCreator)
  *                   example: Account updated
  *                 data:
  *                   type: object
- *                   description: Updated creator information.
- *
  *       401:
  *         description: Unauthorized - authentication token is missing or invalid
- *
  *       500:
  *         description: Error updating creator
  *         content:
